@@ -11,20 +11,21 @@
 	},
 	"scripts": {
 		"build": "npm run prepack",
-		"prepack": "svelte-package && publint",
+		"prepack": "svelte-package --input=src && publint",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run && npm run test:e2e",
+		"test:unit": "vitest run",
+		"test:unit:dev": "vitest",
+		"test": "npm run test:unit && npm run test:e2e",
 		"test:e2e": "playwright test"
 	},
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*",
-		"src/lib",
-		"!src/lib/**/*.test.*",
-		"!src/lib/**/*.spec.*"
+		"src",
+		"!src/**/*.test.*",
+		"!src/**/*.spec.*"
 	],
 	"sideEffects": [
 		"**/*.css"
@@ -46,7 +47,6 @@
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",

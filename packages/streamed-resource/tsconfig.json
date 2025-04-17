@@ -1,5 +1,4 @@
 {
-	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
 		"allowJs": true,
 		"checkJs": true,
@@ -12,6 +11,8 @@
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
 		"declaration": true,
-		"declarationMap": true
-	}
+		"declarationMap": true,
+		"target": "esnext"
+	},
+	"include": ["src"]
 }

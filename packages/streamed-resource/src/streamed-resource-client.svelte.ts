@@ -1,5 +1,5 @@
 import type { Status, Key } from './types.js';
-import { createDeferredCleanup, KeyedStore } from '$lib/utils.svelte.js';
+import { createDeferredCleanup, KeyedStore } from './utils.svelte.js';
 
 class StoredData<TData, TError> {
 	key: string;
@@ -49,7 +49,6 @@ export class StreamedResource<TData, TError = unknown> {
 		return this.#store.revalidatingCount > 0 && this.#store.status !== 'loading';
 	}
 	get data() {
-		console.log(new Error().stack);
 		this.#store.dependUpon();
 		return this.#store.data.value;
 	}
