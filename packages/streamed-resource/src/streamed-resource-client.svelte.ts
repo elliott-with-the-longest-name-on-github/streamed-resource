@@ -49,7 +49,6 @@ export class StreamedResource<TData, TError = unknown> {
 		return this.#store.revalidatingCount > 0 && this.#store.status !== 'loading';
 	}
 	get data() {
-		console.log(new Error().stack);
 		this.#store.dependUpon();
 		return this.#store.data.value;
 	}

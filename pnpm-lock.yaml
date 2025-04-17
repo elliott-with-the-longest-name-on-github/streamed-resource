@@ -107,9 +107,6 @@ importers:
 
   packages/streamed-resource:
     devDependencies:
-      '@sveltejs/adapter-auto':
-        specifier: ^4.0.0
-        version: 4.0.0(@sveltejs/kit@2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))
       '@sveltejs/kit':
         specifier: ^2.16.0
         version: 2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1))
@@ -818,11 +815,6 @@ packages:
     resolution: {integrity: sha512-IwQk4yfwLdibDlrXVE04jTZYlLnwsTT2PIOQQGNLWfjavGifnk1JD1LcZjZaBTRcxZu2FfPfNLOE04DSu9lqtQ==}
     peerDependencies:
       acorn: ^8.9.0
-
-  '@sveltejs/adapter-auto@4.0.0':
-    resolution: {integrity: sha512-kmuYSQdD2AwThymQF0haQhM8rE5rhutQXG4LNbnbShwhMO4qQGnKaaTy+88DuNSuoQDi58+thpq8XpHc1+oEKQ==}
-    peerDependencies:
-      '@sveltejs/kit': ^2.0.0
 
   '@sveltejs/adapter-vercel@5.7.0':
     resolution: {integrity: sha512-Bd/loKugyr12I576NaktLzIHa0PinS638wuWgVq4ctPg/qmkeU459jurWjs3NiRN/pbBpXOlk8i8HXgQF+dsUg==}
@@ -3095,11 +3087,6 @@ snapshots:
   '@sveltejs/acorn-typescript@1.0.5(acorn@8.14.1)':
     dependencies:
       acorn: 8.14.1
-
-  '@sveltejs/adapter-auto@4.0.0(@sveltejs/kit@2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))':
-    dependencies:
-      '@sveltejs/kit': 2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1))
-      import-meta-resolve: 4.1.0
 
   '@sveltejs/adapter-vercel@5.7.0(@sveltejs/kit@2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))(svelte@5.27.0)(vite@6.3.1(jiti@1.21.7)(yaml@2.7.1)))(rollup@4.40.0)':
     dependencies:
