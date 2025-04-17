@@ -12,24 +12,24 @@ SvelteKit's streamed promises are an awesome feature, but they can be annoying t
 ```ts
 // +page.server.ts
 export function load() {
-  return {
-    postsQuery: getPosts(),
-  }
+	return {
+		postsQuery: getPosts()
+	};
 }
 ```
 
 ```svelte
 <!-- +page.svelte -->
 <script>
-  const { data } = $props();
+	const { data } = $props();
 </script>
 
 {#await data.postsQuery}
-  <pre>Loading...</pre>
+	<pre>Loading...</pre>
 {:then result}
-  <pre>{JSON.stringify(data, undefined, 2)}</pre>
+	<pre>{JSON.stringify(data, undefined, 2)}</pre>
 {:catch error}
-  <pre>{JSON.stringify(error, undefined, 2)}</pre>
+	<pre>{JSON.stringify(error, undefined, 2)}</pre>
 {/await}
 
 <button onclick={() => invalidateAll()}>invalidate</button>
@@ -57,28 +57,28 @@ import { createStreamedResource } from '@sejohnson/streamed-resource';
 
 // +page.server.ts
 export function load() {
-  return {
-    postsQuery: createStreamedResource(['posts'], getPosts()),
-  }
+	return {
+		postsQuery: createStreamedResource(['posts'], getPosts())
+	};
 }
 ```
 
 ```svelte
 <!-- +page.svelte -->
 <script>
-  const { data } = $props();
+	const { data } = $props();
 </script>
 
 {#if data.postsQuery.status === 'loading'}
-  <pre>Loading...</pre>
+	<pre>Loading...</pre>
 {:else if data.postsQuery.status === 'error'}
-  <pre>{JSON.stringify(data.postsQuery.error, undefined, 2)}</pre>
+	<pre>{JSON.stringify(data.postsQuery.error, undefined, 2)}</pre>
 {:else}
-  <pre>{JSON.stringify(data.postsQuery.data, undefined, 2)}</pre>
+	<pre>{JSON.stringify(data.postsQuery.data, undefined, 2)}</pre>
 {/if}
 
 {#if data.revalidating}
-  <pre>Revalidating...</pre>
+	<pre>Revalidating...</pre>
 {/if}
 
 <button onclick={() => invalidateAll()}>invalidate</button>

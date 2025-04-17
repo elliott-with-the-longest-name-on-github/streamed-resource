@@ -13,7 +13,7 @@
 		{#if data.test.status === 'loading'}
 			Loading your data on initial render...
 		{:else if data.test.status === 'error'}
-			{data.test.error.message}
+			{data.test.error}
 		{:else}
 			{data.test.data}
 		{/if}
