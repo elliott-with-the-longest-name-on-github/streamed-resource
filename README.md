@@ -3,7 +3,7 @@
 Give me your promises, and I will keep them.
 
 > [!NOTE]
-> This library works great along with the excellent `[sveltekit-search-params](https://www.npmjs.com/package/sveltekit-search-params)`!
+> This library works great along with the excellent [`sveltekit-search-params`](https://www.npmjs.com/package/sveltekit-search-params)!
 
 ## Why?
 
