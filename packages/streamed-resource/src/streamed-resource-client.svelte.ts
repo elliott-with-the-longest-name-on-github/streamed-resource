@@ -1,5 +1,5 @@
 import type { Status, Key } from './types.js';
-import { createDeferredCleanup, KeyedStore } from '$lib/utils.svelte.js';
+import { createDeferredCleanup, KeyedStore } from './utils.svelte.js';
 
 class StoredData<TData, TError> {
 	key: string;

@@ -17,7 +17,7 @@ import type { Key } from './types.js';
 export function createDeferredCleanup(cleanup: () => void) {
 	let subscribers = 0;
 	let stop: (() => void) | void;
-	let timeout: number | undefined;
+	let timeout: NodeJS.Timeout | undefined;
 
 	return () => {
 		if (!$effect.tracking()) {
