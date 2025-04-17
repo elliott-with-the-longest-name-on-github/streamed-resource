@@ -1,0 +1,38 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"test:e2e": "pnpm -r test:e2e",
+		"test:unit": "pnpm -r test:unit",
+		"format": "prettier --write .",
+		"check": "pnpm -r build && pnpm -r check",
+		"lint": "prettier --check . && eslint .",
+		"dev": "pnpm -F @sejohnson/streamed-resource build && pnpm -F playground dev",
+		"build": "pnpm -F @sejohnson/streamed-resource build",
+		"release": "pnpm -r build && changeset publish",
+		"version-packages": "changeset version && pnpm i --no-frozen-lockfile && cp README.md packages/streamed-resource/README.md && git add ."
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.29.2",
+		"@eslint/compat": "^1.2.5",
+		"@eslint/js": "^9.18.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"eslint": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-svelte": "^3.0.0",
+		"globals": "^16.0.0",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.3",
+		"typescript": "^5.0.0",
+		"typescript-eslint": "^8.20.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+}

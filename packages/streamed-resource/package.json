@@ -1,0 +1,67 @@
+{
+	"name": "@sejohnson/streamed-resource",
+	"version": "0.0.1",
+	"repository": {
+		"directory": "packages/streamed-resource",
+		"type": "git",
+		"url": "git+https://github.com/elliott-with-the-longest-name-on-github/streamed-resource.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"build": "npm run prepack",
+		"prepack": "svelte-package && publint",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run && npm run test:e2e",
+		"test:e2e": "playwright test"
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*",
+		"src/lib",
+		"!src/lib/**/*.test.*",
+		"!src/lib/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"types": "./dist/index-client.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index-client.d.ts",
+			"browser": "./dist/index-client.js",
+			"default": "./dist/index-server.js"
+		},
+		"./transport": {
+			"types": "./dist/transport.d.ts",
+			"default": "./dist/transport.js"
+		}
+	},
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.49.1",
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/svelte": "^5.2.4",
+		"jsdom": "^26.0.0",
+		"publint": "^0.3.2",
+		"svelte": "^5.0.0",
+		"svelte-check": "^4.0.0",
+		"typescript": "^5.0.0",
+		"vite": "^6.2.5",
+		"vitest": "^3.0.0"
+	},
+	"keywords": [
+		"svelte"
+	]
+}
